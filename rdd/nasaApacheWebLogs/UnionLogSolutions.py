@@ -1,7 +1,9 @@
 from pyspark import SparkContext, SparkConf
 
+
 def isNotHeader(line: str):
     return not (line.startswith("host") and "bytes" in line)
+
 
 if __name__ == "__main__":
     conf = SparkConf().setAppName("unionLogs").setMaster("local[*]")
